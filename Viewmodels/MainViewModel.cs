@@ -8,5 +8,8 @@ namespace NoteTaking.Viewmodels
 {
     public class MainViewModel
     {
+        public MainViewModel()
+        {
+        }
     }
 }

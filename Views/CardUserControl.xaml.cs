@@ -1,5 +1,4 @@
-﻿using NoteTaking.Viewmodels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +16,12 @@ using System.Windows.Shapes;
 namespace NoteTaking.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interação lógica para CardUserControl.xam
     /// </summary>
-    public partial class MainView: Window
+    public partial class CardUserControl : UserControl
     {
-        public MainView()
+        public CardUserControl()
         {
-            MainViewModel vm = new MainViewModel();
-            this.DataContext = vm;
             InitializeComponent();
         }
     }
