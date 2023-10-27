@@ -13,17 +13,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-
-        <local:BoardUserControl Grid.Column="1" 
-                                Background="BurlyWood"
-                                />
-        <local:BoardUserControl Margin="20,20,20,20"
-                                Panel.ZIndex="1" />
-        <local:BoardUserControl Grid.Column="2"
-                                Margin="20,20,20,20"
-                                Panel.ZIndex="2" />
+        <ListBox>
+            
+        </ListBox>
     </Grid>
 </Window>
