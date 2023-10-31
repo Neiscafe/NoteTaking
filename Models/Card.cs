@@ -8,7 +8,6 @@ namespace NoteTaking.Models
 {
     public class Card
     {
-
         public Card(string name, string description, DateTime CreationDate)
         {
             this.Name = name;

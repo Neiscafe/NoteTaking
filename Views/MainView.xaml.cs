@@ -23,9 +23,9 @@ namespace NoteTaking.Views
     {
         public MainView()
         {
-            MainViewModel vm = new MainViewModel();
-            this.DataContext = vm;
             InitializeComponent();
+            MainViewModel vm = new ();
+            this.DataContext = vm;
         }
     }
 }

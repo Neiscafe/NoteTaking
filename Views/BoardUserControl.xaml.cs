@@ -1,4 +1,5 @@
-﻿using NoteTaking.Viewmodels;
+﻿using NoteTaking.Models;
+using NoteTaking.Viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,15 @@ namespace NoteTaking.Views
         public BoardUserControl()
         {
             InitializeComponent();
-            DataContext = new BoardViewModel();
+            DataContext = new BoardViewModel(ShownBoard);
+        }
+        public static readonly DependencyProperty BoardProperty = 
+            DependencyProperty.Register("Board", typeof(Board), typeof(BoardUserControl), new PropertyMetadata(new Board()));
+
+        public Board ShownBoard
+        {
+            get { return (Board)GetValue(BoardProperty); }
+            set { SetValue(BoardProperty, value); }
         }
     }
 }

@@ -11,19 +11,14 @@ namespace NoteTaking.Viewmodels
 {
     public class BoardViewModel: INotifyPropertyChanged
     {
-        public BoardViewModel()
+        public BoardViewModel(Board selectedBoard)
         {
-            this.BoardCards = new()
-            {
-                new Card("Teste 1", "Teste 2", DateTime.Now),
-                new Card("Teste 1", "Teste 2", DateTime.Now),
-                new Card("Teste 1", "Teste 2", DateTime.Now),
-                new Card("Teste 1", "Teste 2", DateTime.Now),
-            };
+            this.SelectedBoard = selectedBoard;
+            BoardCards = UnitOfWork.CardRepository.GetCards(SelectedBoard.Id);
         }
+        public Board SelectedBoard { get; set; }
         public string BoardName { get; set; }   
         public ObservableCollection<Card> BoardCards { get; set; }
-
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

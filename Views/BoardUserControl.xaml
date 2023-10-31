@@ -5,17 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:NoteTaking.Views"
              xmlns:vm="clr-namespace:NoteTaking.Viewmodels"
+             x:Name="boardUserControl"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance vm:BoardViewModel}">
     <GroupBox BorderBrush="LightSkyBlue"
             BorderThickness="2">
         <GroupBox.Header>
-            <TextBlock Text="{Binding BoardName}"/>
+            <TextBlock Text="{Binding ShownBoard, ElementName=boardUserControl}"/>
         </GroupBox.Header>
-        <ListBox ItemsSource="{Binding BoardCards, Mode=TwoWay}">
+        <!--<ListBox ItemsSource="{Binding BoardCards}">
             <DataTemplate>
-                <local:CardUserControl/> 
+                --><!--<local:BoardUserControl/>--><!--
             </DataTemplate>
-        </ListBox>
+        </ListBox>-->
     </GroupBox>
 </UserControl>
