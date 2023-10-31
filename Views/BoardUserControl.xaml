@@ -11,7 +11,7 @@
     <GroupBox BorderBrush="LightSkyBlue"
             BorderThickness="2">
         <GroupBox.Header>
-            <TextBlock Text="{Binding ShownBoard, ElementName=boardUserControl}"/>
+            <TextBlock Text="{Binding Path=ShownBoard.Name, ElementName=boardUserControl}"/>
         </GroupBox.Header>
         <!--<ListBox ItemsSource="{Binding BoardCards}">
             <DataTemplate>
