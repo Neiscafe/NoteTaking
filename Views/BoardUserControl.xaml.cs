@@ -25,12 +25,12 @@ namespace NoteTaking.Views
         public BoardUserControl()
         {
             InitializeComponent();
-            //DataContext = new BoardViewModel(ShownBoard);
+            DataContext = new BoardViewModel(CurrentBoard);
         }
         public static readonly DependencyProperty BoardProperty = 
-            DependencyProperty.Register("ShownBoard", typeof(Board), typeof(BoardUserControl), new PropertyMetadata(new Board()));
+            DependencyProperty.Register("Content", typeof(Board), typeof(BoardUserControl), new PropertyMetadata(new Board()));
 
-        public Board ShownBoard
+        public Board CurrentBoard
         {
             get { return (Board)GetValue(BoardProperty); }
             set { SetValue(BoardProperty, value); }

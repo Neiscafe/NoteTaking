@@ -10,8 +10,9 @@ namespace NoteTaking.Viewmodels
 {
     public class CardViewModel : INotifyPropertyChanged
     {
-        public CardViewModel()
+        public CardViewModel(Card selectedCard)
         {
+            this.SelectedCard = selectedCard;
         }
         public Card SelectedCard { get; set; }
 

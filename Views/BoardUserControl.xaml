@@ -8,15 +8,17 @@
              x:Name="boardUserControl"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance vm:BoardViewModel}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="CardTemplate">
+            <local:CardUserControl Content="{Binding}" />
+        </DataTemplate>
+    </UserControl.Resources>
     <GroupBox BorderBrush="LightSkyBlue"
-            BorderThickness="2">
+              BorderThickness="2">
         <GroupBox.Header>
-            <TextBlock Text="{Binding Path=ShownBoard.Name, ElementName=boardUserControl}"/>
+            <TextBlock Text="{Binding CurrentBoard.Name, ElementName=boardUserControl}" />
         </GroupBox.Header>
-        <!--<ListBox ItemsSource="{Binding BoardCards}">
-            <DataTemplate>
-                --><!--<local:BoardUserControl/>--><!--
-            </DataTemplate>
-        </ListBox>-->
+        <ListBox ItemsSource="{Binding BoardCards}" ItemTemplate="{StaticResource CardTemplate}">
+        </ListBox>
     </GroupBox>
 </UserControl>

@@ -24,8 +24,11 @@ namespace NoteTaking.Views
     {
         public CardUserControl()
         {
-            DataContext = new CardViewModel();
+            //DataContext = new CardViewModel(SelectedCard);
             InitializeComponent();
         }
+        public static readonly DependencyProperty CardProperty = DependencyProperty.Register("Content", typeof(Board), typeof(CardUserControl), new PropertyMetadata());
+
+        public Card SelectedCard { get => (Card)GetValue(CardProperty); set => SetValue(CardProperty, value); }
     }
 }

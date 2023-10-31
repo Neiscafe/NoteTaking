@@ -17,8 +17,7 @@
         <ListBox ItemsSource="{Binding Boards}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <views:BoardUserControl ShownBoard="{Binding}"/>
-                    <!--<TextBlock Text="{Binding}"/>-->
+                    <views:BoardUserControl Content="{Binding}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
