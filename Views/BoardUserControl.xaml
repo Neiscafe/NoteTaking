@@ -16,9 +16,9 @@
     <GroupBox BorderBrush="LightSkyBlue"
               BorderThickness="2">
         <GroupBox.Header>
-            <TextBlock Text="{Binding CurrentBoard.Name, ElementName=boardUserControl}" />
+            <TextBlock Text="{Binding SelectedBoard.Name}"/>
         </GroupBox.Header>
-        <ListBox ItemsSource="{Binding BoardCards}" ItemTemplate="{StaticResource CardTemplate}">
-        </ListBox>
+        <!--<ListBox ItemsSource="{Binding BoardCards}" ItemTemplate="{StaticResource CardTemplate}">
+        </ListBox>-->
     </GroupBox>
 </UserControl>
