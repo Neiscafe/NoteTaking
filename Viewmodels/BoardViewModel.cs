@@ -14,11 +14,10 @@ namespace NoteTaking.Viewmodels
         public BoardViewModel(Board selectedBoard)
         {
             this.SelectedBoard = selectedBoard;
-            BoardCards = UnitOfWork.CardRepository.GetCards(SelectedBoard.Id);
         }
         public Board SelectedBoard { get; set; }
         public string BoardName { get; set; }   
-        public ObservableCollection<Card> BoardCards { get; set; }
+        
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

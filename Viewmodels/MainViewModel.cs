@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 
 namespace NoteTaking.Viewmodels
 {
-    public class MainViewModel: INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
         {
-            this.Boards = UnitOfWork.BoardRepository.GetBoards();
+            this.Boards = new ObservableCollection<Board>(UnitOfWork.BoardRepository.GetBoards());
         }
 
         public ObservableCollection<Board> Boards { get; set; }
-
+        public Board SelectedBoard { get; set; }
+        public Card SelectedCard { get; set; }
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

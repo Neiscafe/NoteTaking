@@ -10,16 +10,33 @@
         Title="MainWindow"
         Height="450"
         Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <ListBox ItemsSource="{Binding Boards}">
+
+    <StackPanel Orientation="Vertical">
+        <ListBox ItemsSource="{Binding Boards}"
+                 SelectedItem="{Binding SelectedBoard}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <views:BoardUserControl Content="{Binding}" />
+                    <StackPanel>
+                        <GroupBox BorderBrush="LightSkyBlue"
+                                  BorderThickness="2">
+                            <GroupBox.Header>
+                                <TextBlock Text="{Binding Path=Name}" />
+                            </GroupBox.Header>
+                            <ListBox ItemsSource="{Binding Path=Cards}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Path=Name}"/>
+                                            <TextBlock Text="{Binding Path=Description}"/>
+                                            <TextBlock Text="{Binding Path=CreationDate}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </GroupBox>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-    </Grid>
+    </StackPanel>
 </Window>
