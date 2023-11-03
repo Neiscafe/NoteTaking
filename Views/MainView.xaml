@@ -14,9 +14,20 @@
     <StackPanel Orientation="Vertical">
         <ListBox ItemsSource="{Binding Boards}"
                  SelectedItem="{Binding SelectedBoard}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="VerticalAlignment"
+                            Value="Top" />
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Orientation="Horizontal">
                         <GroupBox BorderBrush="LightSkyBlue"
                                   BorderThickness="2">
                             <GroupBox.Header>
@@ -25,10 +36,10 @@
                             <ListBox ItemsSource="{Binding Path=Cards}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding Path=Name}"/>
-                                            <TextBlock Text="{Binding Path=Description}"/>
-                                            <TextBlock Text="{Binding Path=CreationDate}"/>
+                                        <StackPanel Margin="10">
+                                            <TextBlock Text="{Binding Path=Name}" />
+                                            <TextBlock Text="{Binding Path=Description}" />
+                                            <TextBlock Text="{Binding Path=CreationDate}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
